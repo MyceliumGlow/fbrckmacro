@@ -1,0 +1,132 @@
+# Fbrck Macro (Fabric Client Mod)
+
+A Fabric **client-side** macro mod for Java 21 that adds:
+
+- A configurable keybind to toggle auto-clicking.
+- A client command to change click delay (`/macro set <delayMs>`).
+- Optional setting to click only while holding a sword/trident (`/macro weaponOnly <true|false>`).
+- Optional **hold-to-click** mode so clicks only happen while you physically hold left click (`/macro holdToClick <true|false>`).
+
+> This project is configured for **Minecraft 1.21.1** (Fabric Loader + Fabric API). If you meant `1.21.11`, update the version properties in `gradle.properties` to the exact released mapping/API versions for that game version.
+
+## Features
+
+- **Controls menu integration**
+  - Keybind: `Toggle Auto Clicker`
+  - Category: `Fbrck Macro`
+- **Commands (client-side)**
+  - `/macro` shows current state
+  - `/macro toggle`
+  - `/macro set <delayMs>` (1 to 2000 ms)
+  - `/macro weaponOnly <true|false>`
+  - `/macro holdToClick <true|false>`
+- **Persistent config**
+  - Saved to `config/fbrckmacro.json`
+
+## Step-by-step build tutorial (no Fabric experience required)
+
+### 1) Install prerequisites
+
+1. Install **Java Development Kit (JDK) 21**.
+2. Install **Git**.
+3. (Optional but recommended) Install IntelliJ IDEA Community Edition.
+
+Check Java:
+
+```bash
+java -version
+```
+
+You should see Java 21.
+
+### 2) Get this project
+
+```bash
+git clone <your-repo-url>
+cd fbrckmacro
+```
+
+### 3) Generate Gradle wrapper (first time only)
+
+If `gradlew` is not present yet:
+
+```bash
+gradle wrapper
+```
+
+Then use wrapper commands (`./gradlew ...`) after that.
+
+### 4) Build the mod
+
+```bash
+./gradlew build
+```
+
+If successful, your jar is created at:
+
+- `build/libs/fbrckmacro-1.0.0.jar`
+
+### 5) Run Minecraft from dev environment (optional)
+
+```bash
+./gradlew runClient
+```
+
+This starts a dev client with your mod loaded.
+
+### 6) Install the mod into normal Minecraft
+
+1. Install Fabric Loader for your target MC version.
+2. Install Fabric API in the `mods` folder.
+3. Copy this mod jar from `build/libs/` into your `.minecraft/mods` folder.
+4. Launch the Fabric profile.
+
+### 7) Use in game
+
+1. Open **Options → Controls → Key Binds → Fbrck Macro**.
+2. Change `Toggle Auto Clicker` key if you want.
+3. Join a world/server.
+4. Press your macro toggle key to enable/disable auto clicking.
+5. Set delay with:
+
+```mcfunction
+/macro set 75
+```
+
+Example: `75` means one click every 75 milliseconds.
+
+### 8) Tune settings
+
+- Enable hold-to-click mode (macro must be ON, and you must hold left click):
+
+```mcfunction
+/macro holdToClick true
+```
+
+- Disable hold-to-click mode:
+
+```mcfunction
+/macro holdToClick false
+```
+
+- Enable weapon-only mode:
+
+```mcfunction
+/macro weaponOnly true
+```
+
+- Disable weapon-only mode:
+
+```mcfunction
+/macro weaponOnly false
+```
+
+### 9) Troubleshooting
+
+- **Command not found**: ensure Fabric API is installed and you are on Fabric profile.
+- **Jar not loading**: verify Java 21 and matching Minecraft/Fabric versions.
+- **Wrong game version**: update values in `gradle.properties`, then rebuild.
+
+## Notes
+
+- This is a client automation mod. Always follow server rules before using macros/auto-clickers.

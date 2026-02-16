@@ -29,7 +29,8 @@ A Fabric **client-side** macro mod for Java 21 that adds:
 
 1. Install **Java Development Kit (JDK) 21**.
 2. Install **Git**.
-3. (Optional but recommended) Install IntelliJ IDEA Community Edition.
+3. Install **Gradle 8.8+** (or generate a wrapper that uses 8.8+).
+4. (Optional but recommended) Install IntelliJ IDEA Community Edition.
 
 Check Java:
 
@@ -38,6 +39,14 @@ java -version
 ```
 
 You should see Java 21.
+
+Check Gradle:
+
+```bash
+gradle --version
+```
+
+You should see **Gradle 8.8 or newer**.
 
 ### 2) Get this project
 
@@ -127,7 +136,7 @@ Example: `75` means one click every 75 milliseconds.
 - **Jar not loading**: verify Java 21 and matching Minecraft/Fabric versions.
 - **Unsupported class file major version 69**: you are running Gradle on Java 25; switch Gradle to JDK 21 (`JAVA_HOME` -> JDK 21) before building.
 - **Wrong game version**: update values in `gradle.properties`, then rebuild.
-- **Loom/Gradle API error** (`Problems.forNamespace`): use a newer Gradle (8.8+ recommended), or regenerate wrapper with a compatible version before running build tasks.
+- **Loom/Gradle API error** (`Problems.forNamespace`): your Gradle is too old for the Loom version in this project. Upgrade to **Gradle 8.8+** and use JDK 21 for Gradle itself. If needed, run: `gradle wrapper --gradle-version 8.14.3`.
 
 ## Notes
 

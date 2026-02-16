@@ -125,7 +125,9 @@ Example: `75` means one click every 75 milliseconds.
 
 - **Command not found**: ensure Fabric API is installed and you are on Fabric profile.
 - **Jar not loading**: verify Java 21 and matching Minecraft/Fabric versions.
+- **Unsupported class file major version 69**: you are running Gradle on Java 25; switch Gradle to JDK 21 (`JAVA_HOME` -> JDK 21) before building.
 - **Wrong game version**: update values in `gradle.properties`, then rebuild.
+- **Loom/Gradle API error** (`Problems.forNamespace`): use a newer Gradle (8.8+ recommended), or regenerate wrapper with a compatible version before running build tasks.
 
 ## Notes
 

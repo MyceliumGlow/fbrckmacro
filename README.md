@@ -7,7 +7,7 @@ A Fabric **client-side** macro mod for Java 21 that adds:
 - Optional setting to click only while holding a sword/trident (`/macro weaponOnly <true|false>`).
 - Optional **hold-to-click** mode so clicks only happen while you physically hold left click (`/macro holdToClick <true|false>`).
 
-> This project is configured for **Minecraft 1.21.1** (Fabric Loader + Fabric API). If you meant `1.21.11`, update the version properties in `gradle.properties` to the exact released mapping/API versions for that game version.
+> This project is configured for **Minecraft 1.21.11** (Fabric Loader + Fabric API). This repo is already pinned for 1.21.11. If an artifact is temporarily unavailable, bump the version values in `gradle.properties` to the latest published ones for 1.21.11.
 
 ## Features
 
@@ -29,7 +29,7 @@ A Fabric **client-side** macro mod for Java 21 that adds:
 
 1. Install **Java Development Kit (JDK) 21**.
 2. Install **Git**.
-3. Install **Gradle 8.8+** (or generate a wrapper that uses 8.8+).
+3. Install **Gradle 8.2+** (or generate a wrapper that uses 8.2+).
 4. (Optional but recommended) Install IntelliJ IDEA Community Edition.
 
 Check Java:
@@ -46,7 +46,7 @@ Check Gradle:
 gradle --version
 ```
 
-You should see **Gradle 8.8 or newer**.
+You should see **Gradle 8.2 or newer**.
 
 ### 2) Get this project
 
@@ -136,7 +136,7 @@ Example: `75` means one click every 75 milliseconds.
 - **Jar not loading**: verify Java 21 and matching Minecraft/Fabric versions.
 - **Unsupported class file major version 69**: you are running Gradle on Java 25; switch Gradle to JDK 21 (`JAVA_HOME` -> JDK 21) before building.
 - **Wrong game version**: update values in `gradle.properties`, then rebuild.
-- **Loom/Gradle API error** (`Problems.forNamespace`): your Gradle is too old for the Loom version in this project. Upgrade to **Gradle 8.8+** and use JDK 21 for Gradle itself. If needed, run: `gradle wrapper --gradle-version 8.14.3`.
+- **Loom/Gradle API error** (`Problems.forNamespace`): your Gradle is too old for the Loom version in this project. Upgrade to **Gradle 8.2+** and use JDK 21 for Gradle itself. If needed, run: `gradle wrapper --gradle-version 8.14.3`.
 
 ## Notes
 

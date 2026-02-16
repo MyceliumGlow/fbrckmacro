@@ -11,12 +11,12 @@ buildscript {
     }
 }
 
-def minGradleVersion = GradleVersion.version('8.8')
+def minGradleVersion = GradleVersion.version('8.2')
 if (GradleVersion.current() < minGradleVersion) {
     throw new GradleException(
             "fbrckmacro requires Gradle ${minGradleVersion.version} or newer for Fabric Loom ${project.loom_version}. " +
             "Current Gradle: ${GradleVersion.current().version}. " +
-            "Use a newer Gradle or regenerate wrapper with --gradle-version 8.8+"
+            "Use a newer Gradle or regenerate wrapper with --gradle-version 8.2+"
     )
 }
 
